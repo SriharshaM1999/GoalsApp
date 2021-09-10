@@ -30,12 +30,17 @@ export default function App() {
        setModalVisiblity(false);
     }
 
+   const checkfunction =(item1, item2)=>{
+     console.log(item1, item2);
+     return item1!==item2;
+   }
+
   const removeGoalHandler=(itemId)=>{
       console.log("itemId", itemId);
       console.log("I got deleted");
 
       setCourseGoals(currentGoals =>{
-        return currentGoals.filter((goal)=>goal.id === itemId)
+        return currentGoals.filter((goal)=> checkfunction(goal.key, itemId))
       })
 
   }  
